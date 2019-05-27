@@ -1,3 +1,4 @@
+//apply plugin: 'com.android.application'
 apply plugin: 'com.android.library'
 
 apply plugin: 'kotlin-android'
@@ -32,5 +33,29 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-    implementation 'com.facebook.android:account-kit-sdk:4.39.0'
+    implementation 'io.socket:socket.io-client:1.0.0'
 }
+
+//task createPom {
+//    apply plugin: 'maven'
+//    description "Generates pom.xml"
+//    pom {
+//        project {
+//            groupId 'com.github.nazmul56'
+//            artifactId 'libraryRelease'
+//            version 'v1.4'
+//            packaging 'aar'
+//        }
+//    }.withXml {
+//        def dependenciesNode = asNode().appendNode('dependencies')
+//
+//        configurations.implementation.allDependencies.each { dependency ->
+//            def dependencyNode = dependenciesNode.appendNode('dependency')
+//            dependencyNode.appendNode('groupId', dependency.group)
+//            dependencyNode.appendNode('artifactId', dependency.name)
+//            dependencyNode.appendNode('version', dependency.version)
+//        }
+//
+//    }.writeTo("$buildDir/pom.xml")
+//}
+

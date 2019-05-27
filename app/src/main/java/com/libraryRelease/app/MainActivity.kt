@@ -1,12 +1,14 @@
 package com.libraryRelease.app
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import io.socket.client.IO
+
 
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,8 +18,10 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            //val intent = Intent(this@MainActivity, AccountKitActivity::class.java)
+            //startActivity(intent)
+            val socket = IO.socket("http://ducomm.oii.chat")
+
         }
     }
 
