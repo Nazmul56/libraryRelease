@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="action_settings">Settings</string>
+    <string name="app_name">Library Release</string>
+    <string name="FACEBOOK_APP_ID">385427358977637</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">[ACCOUNT_KIT_CLIENT_TOKEN]</string>
+</resources>
