@@ -34,3 +34,26 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
 }
+
+task createPom {
+    apply plugin: 'maven'
+    description "Generates pom.xml"
+    pom {
+        project {
+            groupId 'com.github.nazmul56'
+            artifactId 'libraryRelease'
+            version 'v1.10'
+            packaging 'aar'
+        }
+    }.withXml {
+        def dependenciesNode = asNode().appendNode('dependencies')
+
+        configurations.implementation.allDependencies.each { dependency ->
+            def dependencyNode = dependenciesNode.appendNode('dependency')
+            dependencyNode.appendNode('groupId', dependency.group)
+            dependencyNode.appendNode('artifactId', dependency.name)
+            dependencyNode.appendNode('version', dependency.version)
+        }
+
+    }.writeTo("$buildDir/pom.xml")
+}
