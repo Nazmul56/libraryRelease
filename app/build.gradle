@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -32,7 +34,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-
+    implementation 'io.socket:socket.io-client:1.0.0'
 }
 
 task createPom {
@@ -57,3 +59,16 @@ task createPom {
 
     }.writeTo("$buildDir/pom.xml")
 }
+
+//plugins {
+//    id 'maven'
+//}
+//
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            repository(url: "$buildDir/pom.xml")
+//        }
+//    }
+//}
+
