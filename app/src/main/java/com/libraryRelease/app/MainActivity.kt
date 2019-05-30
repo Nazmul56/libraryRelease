@@ -7,16 +7,17 @@ import android.view.Menu
 import android.view.MenuItem
 import io.socket.client.IO
 
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main_library.*
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main_library)
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
+
 
             val socket = IO.socket("http://ducomm.oii.chat")
 
